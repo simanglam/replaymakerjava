@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.simanglam.App;
 import com.simanglam.model.Character;
+import com.simanglam.util.Const;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
@@ -52,7 +53,7 @@ public class CharacterBox extends HBox{
         }
 
         VBox characterBox = new VBox();
-        characterBox.setPadding(new Insets(10));
+        this.setPadding(Const.normalPadding);
         characterBox.setSpacing(10);
         TextField nameField = new TextField(character.getName());
 
@@ -71,9 +72,9 @@ public class CharacterBox extends HBox{
         characterBox.getChildren().add(new HBox(narratorBox));
 
         CheckBox invisibleBox = new CheckBox("Invisible");
-        invisibleBox.setSelected(character.getVisible());
+        invisibleBox.setSelected(!character.getVisible());
         invisibleBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            character.setVisible(newValue);
+            character.setVisible(!newValue);
         });
 
         characterBox.getChildren().add(new HBox(invisibleBox));
