@@ -29,7 +29,7 @@ public class GlobalStorage {
     public ArrayList<Character> getAllCharacters(){ return new ArrayList<>(characters.values()); }
     public void addCharacter(String name){ characters.put(name, new Character(name, characters.size())); }
 
-    public ArrayList<Act> getAllActss(){ return acts; }
+    public ArrayList<Act> getAllActs(){ return acts; }
     public void addAct(Act act){ act.setId(acts.size()); acts.add(act);}
 
 }
