@@ -13,7 +13,20 @@ public class Message {
     }
 
     public void export(OutputStreamWriter os) throws IOException {
-        os.write(String.format("%s \"%s\"\n", author.getName(), content));
+        if (author.getVisible() == false) return;
+        if (author.getNarrator()) os.write(String.format("\t\"%s\"\n", author.getId(), content.replace("\n", "\\n")));
+        else os.write(String.format("\tc%d \"%s\"\n", author.getId(), content.replace("\n", "\\n")));
     }
 
+    public Character getAuthor(){
+        return author;
+    }
+
+    public String getContent(){
+        return this.content;
+    }
+
+    public void setContent(String content){
+        this.content = content;
+    }
 }
