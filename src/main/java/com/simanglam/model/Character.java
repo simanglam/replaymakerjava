@@ -10,7 +10,7 @@ public class Character {
     private String nickname;
     private int id;
     private boolean isNarrator = false;
-    private boolean isVisible = false;
+    private boolean isVisible = true;
     
     public Character(String name, int id){
         this.nickname = name;
